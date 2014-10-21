@@ -2,25 +2,146 @@
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
-// Custom Styles
-body {
-  background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+
+// Mixins
+$container-color: #eee;
+$container-padding: 40px;
+$text-color: #333;
+$body-background-color: #fafafa;
+
+$mobile: new-breakpoint(max-width 480px);
+$desktop: new-breakpoint(min-width 850px);
+
+
+//Input Feilds
+#{$all-text-inputs} {
+  @include border-top-radius(5px);
+  @include border-bottom-radius(5px);
+  @include border-left-radius(5px);
+  @include border-right-radius(5px);
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 600px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+#{$all-text-inputs-hover} { // Target the :hover pseudo-class
+  @include border-top-radius(5px);
+  @include border-bottom-radius(5px);
+  @include border-left-radius(5px);
+  @include border-right-radius(5px);
+}
+
+#{$all-text-inputs-focus} { // Target the :focus pseudo-class
+  @include border-top-radius(5px);
+  @include border-bottom-radius(5px);
+  @include border-left-radius(5px);
+  @include border-right-radius(5px);
+}
+
+#{$all-button-inputs} {
+  @include border-top-radius(5px);
+  @include border-bottom-radius(5px);
+  @include border-left-radius(5px);
+  @include border-right-radius(5px);
+}
+
+#{$all-button-inputs-hover} { // Target the :hover pseudo-class
+  @include border-top-radius(5px);
+  @include border-bottom-radius(5px);
+  @include border-left-radius(5px);
+  @include border-right-radius(5px);
+}
+
+#{$all-button-inputs-focus} { // Target the :focus pseudo-class
+  @include border-top-radius(5px);
+  @include border-bottom-radius(5px);
+  @include border-left-radius(5px);
+  @include border-right-radius(5px);
+}
+
+#{$all-button-inputs-active} { // Target the :active pseudo-class
+  @include border-top-radius(5px);
+  @include border-bottom-radius(5px);
+  @include border-left-radius(5px);
+  @include border-right-radius(5px);
+}
+
+
+// Custom Styles
+body {
+  background: $body-background-color;
+  font-family: $helvetica;
+  color: $text-color;
+}
+
+
+h1 {
+  font-family: $helvetica;
+  font-size: golden-ratio(14px, 1);
+  letter-spacing: -1px;
+}
+
+section {
+  @include outer-container;
+  @include box-sizing(border-box);
+  @include margin(5vh 20px 10px 5vh);
+  aside {
+    background-color: $container-color;
+    @include border-top-radius(5px);
+    @include border-bottom-radius(5px);
+    @include border-left-radius(5px);
+    @include border-right-radius(5px);
+    padding: $container-padding;
+
+    ul {
+      list-style-type: none;
+    }
+
+    @include media($mobile) {
+    @include span-columns(12);
+    }
+
+    @include media($desktop) {
+    @include span-columns(3);
+    }
+  }
+  article {
+    background-color: $container-color;
+    @include border-top-radius(5px);
+    @include border-bottom-radius(5px);
+    @include border-left-radius(5px);
+    @include border-right-radius(5px);
+    padding: $container-padding;
+
+    @include media($mobile) {
+    @include span-columns(12);
+    }
+
+    @include media($desktop) {
+    @include span-columns(9);
+    }
+  }
+}
+
+footer {
+  @include outer-container;
+  @include box-sizing(border-box);
+  @include margin(5vh 20px 10px 5vh);
+
+  .post-form {
+    @include span-columns(12);
+    background-color: $container-color;
+    @include border-top-radius(5px);
+    @include border-bottom-radius(5px);
+    @include border-left-radius(5px);
+    @include border-right-radius(5px);
+    padding: $container-padding;
+  }
+
+  #title-field {
+    width: 14em;
+    margin-left: 1em;
+  }
+
+  #post-field {
+    width: 24em;
+    margin-left: 1em;
   }
 }
