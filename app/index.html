@@ -35,16 +35,28 @@
       <article>
         Neat is an open source semantic grid framework
         built on top of Sass and Bourbon…
+        <div class='container'>
+        </div>
+
+
       </article>
     </section>
 
     <footer>
-      <div id="post-from">
+      <div id="post-form">
         <input type='text' id='title-field' name='title' class='title-feild' placeholder='your title goes here...'/>
         <input type='text' id='post-field' name='post' class='post-feild' placeholder='your blog post goes here...'/>
       <input type='submit' value='Submit' class='submit-feild' />
     </div>
     </footer>
+
+    <script type='text/template' id='blog'>
+    <div id='post'>
+        <%= title %>
+        <%= post %>
+    </div>
+    </script>
+
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
